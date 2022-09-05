@@ -36,12 +36,17 @@ RSpec.describe "Project show page" do
     end
 
     describe "I see that project's name and material" do
-      xit 'displays project name and material used' do
+      it 'displays project name and material used' do
         visit "/projects/#{@news_chic.id}"
 
-        expect(page).to have_content("Project Name: News Chic")
-        expect(page).to have_content("Material: Newspaper")
-        expect(page).to_not have_content("Material: Cardboard Boxes")
+        expect(page).to have_content("Name")
+        expect(page).to have_content("Material")
+        
+        within("#project_#{@news_chic.id}") do
+          expect(page).to have_content("News Chic")
+          expect(page).to have_content("Newspaper")
+          expect(page).to_not have_content("Cardboard Boxes")
+        end
       end
     end
 

@@ -38,7 +38,7 @@
         expect(page).to have_content("Contestants")
       end
 
-      xit "displays a list of names of all contestants" do
+      it "displays a list of names of all contestants" do
         visit "/contestants"
 
         within("#contestant_#{@jay.id}") do
@@ -52,9 +52,9 @@
         end
       end
 
-      xit "displays list of projects (names) that they/ve been on" do
+      it "displays list of projects (names) that they/ve been on" do
         visit "/contestants"
-
+        
         within("#contestant_#{@jay.id}") do
           expect(page).to have_content(@news_chic.name)
         end

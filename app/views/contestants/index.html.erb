@@ -1,1 +1,14 @@
 <h1>Contestants</h1>
+
+<% @contestants.each do |contestant| %>
+  <div id="contestant_<%= contestant.id %>">
+    <h3><%= contestant.name %></h3>
+      <ul>
+        <% @projects.each do |project| %>
+          <% if contestant.id == project.id %>
+            <li><%= project.name %></li>
+          <% end %>
+        <% end %>
+      </ul>
+  </div>
+<% end %>

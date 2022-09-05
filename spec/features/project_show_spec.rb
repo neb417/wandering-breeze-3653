@@ -39,9 +39,9 @@ RSpec.describe "Project show page" do
       it 'displays project name and material used' do
         visit "/projects/#{@news_chic.id}"
 
-        expect(page).to have_content("Name")
+        expect(page).to have_content("Project Name")
         expect(page).to have_content("Material")
-        
+
         within("#project_#{@news_chic.id}") do
           expect(page).to have_content("News Chic")
           expect(page).to have_content("Newspaper")
@@ -51,14 +51,20 @@ RSpec.describe "Project show page" do
     end
 
     describe "displays theme of the challenge that this project belongs to" do
-      xit 'displays theme of the challenge that this project belongs to' do
+      it 'displays theme of the challenge that this project belongs to' do
         visit "/projects/#{@boardfit.id}"
 
-        expect(page).to have_content("Project Name: Boardfit")
-        expect(page).to have_content("Material: Cardboard Boxes")
-        expect(page).to have_content("Challenge Theme: Recycled Material")
-        expect(page).to_not have_content("Material: Newspaper")
-        expect(page).to_not have_content("Challenge Theme: Apartment Furnishings")
+        expect(page).to have_content("Project Name")
+        expect(page).to have_content("Material")
+        expect(page).to have_content("Challenge Theme")
+
+        within("#project_#{@boardfit.id}") do
+          expect(page).to have_content("Boardfit")
+          expect(page).to have_content("Cardboard Boxes")
+          expect(page).to have_content("Recycled Material")
+          expect(page).to_not have_content("Newspaper")
+          expect(page).to_not have_content("Apartment Furnishings")
+        end
       end
     end
   end

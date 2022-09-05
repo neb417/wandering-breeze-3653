@@ -13,11 +13,13 @@
 <h1>Project Page</h1>
 <table>
   <tr>
-    <th>Name</th>
+    <th>Project Name</th>
     <th>Material</th>
+    <th>Challenge Theme</th>
   </tr>
   <tr id="project_<%= @project.id %>">
     <td><%= "#{@project.name}" %></td>
     <td><%= "#{@project.material}" %></td>
+    <td><%= "#{@challenge.theme}" %></td>
   </tr>
 </table>

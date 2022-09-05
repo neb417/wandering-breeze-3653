@@ -26,8 +26,8 @@ RSpec.describe "Project show page" do
     ContestantProject.create(contestant_id: @erin.id, project_id: @boardfit.id)
   end
 
-  descirbe 'User Story 1: As a visitor' do
-    descirbe "When I visit a project's show page ('/projects/:id')" do
+  describe 'User Story 1: As a visitor' do
+    describe "When I visit a project's show page ('/projects/:id')" do
       it 'route exists' do
         visit "/projects/#{@news_chic.id}"
 
@@ -35,7 +35,7 @@ RSpec.describe "Project show page" do
       end
     end
 
-    descirbe "I see that project's name and material" do
+    describe "I see that project's name and material" do
       xit 'displays project name and material used' do
         visit "/projects/#{@news_chic.id}"
 
